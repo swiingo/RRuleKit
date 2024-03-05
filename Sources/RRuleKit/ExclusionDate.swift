@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ExclusionDate {
+public struct ExclusionDate: Equatable {
     /// All exclusion dates.
     public fileprivate(set) var dates = [Date]()
     /// The component of ExclusionDate, used to decide which exdate will be excluded.

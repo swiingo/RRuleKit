@@ -9,7 +9,7 @@
 import Foundation
 import EventKit
 
-public struct RecurrenceRule {
+public struct RecurrenceRule: Equatable {
     /// The calendar of recurrence rule.
     public var calendar = Calendar.current
 
