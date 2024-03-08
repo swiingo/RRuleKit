@@ -27,13 +27,13 @@ internal struct JavaScriptBridge {
 internal extension RecurrenceFrequency {
     fileprivate func toJSONFrequency() -> String {
         switch self {
-        case .secondly: return "RRule.SECONDLY"
-        case .minutely: return "RRule.MINUTELY"
-        case .hourly: return "RRule.HOURLY"
-        case .daily: return "RRule.DAILY"
-        case .weekly: return "RRule.WEEKLY"
-        case .monthly: return "RRule.MONTHLY"
-        case .yearly: return "RRule.YEARLY"
+        case .bySecond: return "RRule.SECONDLY"
+        case .byMinute: return "RRule.MINUTELY"
+        case .byHour: return "RRule.HOURLY"
+        case .byDay: return "RRule.DAILY"
+        case .byWeek: return "RRule.WEEKLY"
+        case .byMonth: return "RRule.MONTHLY"
+        case .byYear: return "RRule.YEARLY"
         }
     }
 }
