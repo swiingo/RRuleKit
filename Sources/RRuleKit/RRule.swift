@@ -32,7 +32,11 @@ public struct RRule {
 
     public static func ruleFromString(_ string: String) -> RecurrenceRule? {
         let string = string.trimmingCharacters(in: .whitespaces)
-        let ruleString = String(string.suffix(from: string.startIndex))
+        let ruleString = if let range = string.range(of: "RRULE:"), range.lowerBound == string.startIndex {
+            String(string.suffix(from: range.upperBound))
+        } else {
+            String(string.suffix(from: string.startIndex))
+        }
         let rules = ruleString.components(separatedBy: ";").compactMap { (rule) -> String? in
             if rule.isEmpty {
                 return nil
