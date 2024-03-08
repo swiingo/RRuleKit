@@ -40,7 +40,7 @@ public struct RRule {
             return rule
         }
 
-        var recurrenceRule = RecurrenceRule(frequency: .byDay)
+        var recurrenceRule = RecurrenceRule(frequency: .daily)
         var ruleFrequency: RecurrenceFrequency?
         for rule in rules {
             let ruleComponents = rule.components(separatedBy: "=")

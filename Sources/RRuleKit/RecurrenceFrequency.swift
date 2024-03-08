@@ -7,36 +7,36 @@
 //
 
 public enum RecurrenceFrequency: Equatable {
-    case byYear
-    case byMonth
-    case byWeek
-    case byDay
-    case byHour
-    case byMinute
-    case bySecond
+    case yearly
+    case monthly
+    case weekly
+    case daily
+    case hourly
+    case minutely
+    case secondly
 
     internal func toString() -> String {
         switch self {
-        case .bySecond: "BYSECOND"
-        case .byMinute: "BYMINUTE"
-        case .byHour: "BYHOUR"
-        case .byDay: "BYDAY"
-        case .byWeek: "BYWEEK"
-        case .byMonth: "BYMONTH"
-        case .byYear: "BYYEAR"
+        case .secondly: return "SECONDLY"
+        case .minutely: return "MINUTELY"
+        case .hourly: return "HOURLY"
+        case .daily: return "DAILY"
+        case .weekly: return "WEEKLY"
+        case .monthly: return "MONTHLY"
+        case .yearly: return "YEARLY"
         }
     }
 
     internal static func frequency(from string: String) -> RecurrenceFrequency? {
         switch string {
-        case "BYSECOND": .bySecond
-        case "BYMINUTE": .byMinute
-        case "BYHOUR": .byHour
-        case "BYDAY": .byDay
-        case "BYWEEK": .byWeek
-        case "BYMONTH": .byMonth
-        case "BYYEAR": .byYear
-        default: nil
+        case "SECONDLY": return .secondly
+        case "MINUTELY": return .minutely
+        case "HOURLY": return .hourly
+        case "DAILY": return .daily
+        case "WEEKLY": return .weekly
+        case "MONTHLY": return .monthly
+        case "YEARLY": return .yearly
+        default: return nil
         }
     }
 }
