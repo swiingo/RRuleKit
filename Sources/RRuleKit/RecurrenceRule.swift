@@ -11,7 +11,7 @@ import EventKit
 
 public struct RecurrenceRule: Equatable {
     /// The calendar of recurrence rule.
-//    public var calendar = Calendar.current
+    public var calendar = Calendar.current
     
     /// The frequency of the recurrence rule.
     public var frequency: RecurrenceFrequency
@@ -120,7 +120,7 @@ extension RecurrenceRule: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
         
-//        calendar = try container.decode(Calendar.self, forKey: .calendar)
+        calendar = try container.decode(Calendar.self, forKey: .calendar)
         frequency = try container.decode(RecurrenceFrequency.self, forKey: .frequency)
         interval = try container.decode(Int.self, forKey: .interval)
         firstDayOfWeek = try container.decode(EKWeekday.self, forKey: .firstDayOfWeek)
@@ -147,7 +147,7 @@ extension RecurrenceRule: Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: Keys.self)
         
-//        try container.encode(calendar, forKey: .calendar)
+        try container.encode(calendar, forKey: .calendar)
         try container.encode(frequency, forKey: .frequency)
         try container.encode(interval, forKey: .interval)
         try container.encode(firstDayOfWeek, forKey: .firstDayOfWeek)
