@@ -9,7 +9,7 @@
 import Foundation
 import EventKit
 
-public struct RRule {
+public struct RRule: Codable {
     public static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)

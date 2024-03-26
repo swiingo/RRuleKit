@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct InclusionDate: Equatable {
+public struct InclusionDate: Equatable, Codable {
     /// All inclusive dates.
     public fileprivate(set) var dates = [Date]()
 
